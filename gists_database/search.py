@@ -20,7 +20,6 @@ def get_operator(comparison):
 
 
 def build_query(**kwargs):
-    # This is UGLY as fuck. Please remove.
     query = 'SELECT * FROM gists'
     values = {}
     if kwargs:
@@ -49,6 +48,7 @@ def build_query(**kwargs):
         query += ' AND '.join(filters)
 
     return query, values
+
 
 def search_gists(db_connection, **kwargs):
     query, params = build_query(**kwargs)
